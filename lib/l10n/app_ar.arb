@@ -1,3 +1,11 @@
 {
-  "appName": "الأخبار"
+  "appName": "الأخبار",
+  "categoryTitle": "اختر فئة اهتمامك",
+  "sports": "الرياضة",
+  "general": "السياسة",
+  "health": "الصحة",
+  "business": "الأعمال",
+  "entertainment": "البيئة",
+  "science": "العلوم",
+  "technology": "التكنولوجيا"
 }

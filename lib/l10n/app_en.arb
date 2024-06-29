@@ -1,3 +1,11 @@
 {
-  "appName": "AKBAR"
+  "appName": "AKBAR",
+  "categoryTitle": "Pick your category\nof interest",
+  "sports": "Sports",
+  "general": "Politics",
+  "health": "Health",
+  "business": "Business",
+  "entertainment": "Environment",
+  "science": "Science",
+  "technology": "Technology"
 }
