@@ -10,7 +10,8 @@ class AppTheme {
           borderRadius: BorderRadius.only(
         bottomLeft: Radius.circular(30),
         bottomRight: Radius.circular(30),
-      )));
+      ))
+  );
 
   /// ==== Base text theme
   static const TextTheme _baseTextTheme = TextTheme(
@@ -63,6 +64,7 @@ class AppTheme {
     appBarTheme: _appBarTheme.copyWith(
       backgroundColor: AppColors.main,
       iconTheme: const IconThemeData(color: Colors.black),
+      titleTextStyle: _baseTextTheme.titleLarge?.copyWith(color: AppColors.txtMainLight),
     ),
 
     /// text theme
@@ -104,6 +106,8 @@ class AppTheme {
     appBarTheme: _appBarTheme.copyWith(
       backgroundColor: AppColors.mainDark,
       iconTheme: const IconThemeData(color: Colors.white),
+      titleTextStyle: _baseTextTheme.titleLarge?.copyWith(color: AppColors.txtMainDark),
+
     ),
 
     /// text theme
