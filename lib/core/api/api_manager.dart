@@ -12,7 +12,7 @@ class ApiManager {
   static Future<SourcesResponse?> getSources() async{
     Uri uri = Uri.https(ApiConstants.baseUrl, Endpoints.sources, {
       ApiConstants.apiKey: ApiConstants.apiKey,
-      ApiConstants.keyCountry: Countries.us
+      ApiConstants.keyCountry: Countries.us.toString()
     });
     try {
       var res = await http.get(uri);

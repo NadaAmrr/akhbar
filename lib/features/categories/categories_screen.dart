@@ -11,9 +11,7 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     List<CategoryModel> categoriesList = CategoryModel.getCategories(context);
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Container(
+    return Container(
         padding: const EdgeInsets.all(35),
         width: double.infinity,
         child: Column(
@@ -44,7 +42,6 @@ class CategoriesScreen extends StatelessWidget {
             )
           ],
         ),
-      ),
     );
   }
 }

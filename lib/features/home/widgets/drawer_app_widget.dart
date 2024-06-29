@@ -1,4 +1,5 @@
 
+import 'package:akhbar/core/enums/drawer_enum.dart';
 import 'package:akhbar/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -77,8 +78,3 @@ class DrawerWidget extends StatelessWidget {
   }
 }
 
-enum DrawerMenuItem {
-  category,
-  settings,
-  sources
-}
