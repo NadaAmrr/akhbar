@@ -1,12 +1,8 @@
-
-
-import 'package:akhbar/models/SourcesResponse.dart';
-import 'package:akhbar/models/article.dart';
-// import 'package:cached_network_image/cached_network_image.dart';
+import 'package:akhbar/models/source.dart';
 import 'package:flutter/material.dart';
 
 class ArticleItemWidth extends StatelessWidget {
-  Sources news;
+  Source news;
   ArticleItemWidth({super.key, required this.news});
 
   @override
@@ -16,10 +12,7 @@ class ArticleItemWidth extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor.withOpacity(0.07),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          width: 3,
-          color: Theme.of(context).primaryColor
-        ),
+        border: Border.all(width: 3, color: Theme.of(context).primaryColor),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,11 +31,9 @@ class ArticleItemWidth extends StatelessWidget {
               fit: BoxFit.fill,
               ),),
            */
-          Text(
-              news.country ?? "",
+          Text(news.country ?? "",
               style: Theme.of(context).textTheme.bodyLarge),
-          Text(news.name ?? "",
-              style: Theme.of(context).textTheme.bodyLarge),
+          Text(news.name ?? "", style: Theme.of(context).textTheme.bodyLarge),
           Text(news.description ?? "",
               style: Theme.of(context).textTheme.bodyLarge),
           // Text(articles.description ?? "", style: TextStyle(fontWeight: FontManager.light, color: ColorManager.txtTertiaryLight, fontSize: 10)),

@@ -1,7 +1,7 @@
 import 'package:akhbar/core/utils/app_colors.dart';
 import 'package:akhbar/features/news/provider/tab_provider.dart';
 import 'package:akhbar/features/news/widgets/source_widget.dart';
-import 'package:akhbar/models/SourcesResponse.dart';
+import 'package:akhbar/models/source.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -11,7 +11,7 @@ class TabWidget extends StatelessWidget {
     required this.sourcesList,
   });
 
-  final List<Sources> sourcesList;
+  final List<Source> sourcesList;
 
   @override
   Widget build(BuildContext context) {

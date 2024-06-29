@@ -3,7 +3,7 @@ import 'package:akhbar/models/source.dart';
 import 'package:flutter/material.dart';
 
 class SourceItem extends StatelessWidget {
-  Sources source;
+  Source source;
   bool isSelected;
   SourceItem({super.key, required this.source,required this.isSelected});
   @override
