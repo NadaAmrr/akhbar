@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 class AppTheme {
   /// === AppBar base theme
   static const AppBarTheme _appBarTheme = AppBarTheme(
-    backgroundColor: Colors.transparent,
-    elevation: 0,
-    centerTitle: true,
-  );
+      elevation: 0,
+      centerTitle: true,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(30),
+        bottomRight: Radius.circular(30),
+      )));
 
   /// ==== Base text theme
   static const TextTheme _baseTextTheme = TextTheme(
@@ -58,6 +61,7 @@ class AppTheme {
 
     /// App Bar
     appBarTheme: _appBarTheme.copyWith(
+      backgroundColor: AppColors.main,
       iconTheme: const IconThemeData(color: Colors.black),
     ),
 
@@ -69,13 +73,24 @@ class AppTheme {
           _baseTextTheme.titleMedium?.copyWith(color: AppColors.txtCategory),
       titleSmall:
           _baseTextTheme.titleSmall?.copyWith(color: AppColors.txtMainLight),
-      bodyLarge:
-          _baseTextTheme.bodyLarge?.copyWith(color: AppColors.txtSecondaryLight),
-      bodyMedium:
-          _baseTextTheme.bodyMedium?.copyWith(color: AppColors.txtSecondaryLight),
-      bodySmall:
-          _baseTextTheme.bodySmall?.copyWith(color: AppColors.txtSecondaryLight),
+      bodyLarge: _baseTextTheme.bodyLarge
+          ?.copyWith(color: AppColors.txtSecondaryLight),
+      bodyMedium: _baseTextTheme.bodyMedium
+          ?.copyWith(color: AppColors.txtSecondaryLight),
+      bodySmall: _baseTextTheme.bodySmall
+          ?.copyWith(color: AppColors.txtSecondaryLight),
     ),
+
+    colorScheme: const ColorScheme(
+        primary: AppColors.primary,
+        onPrimary: AppColors.onPrimary,
+        secondary: AppColors.secondary,
+        onSecondary: AppColors.onSecondary,
+        error: AppColors.error,
+        onError: AppColors.onError,
+        surface: AppColors.surface,
+        onSurface: AppColors.onSurface,
+        brightness: Brightness.light),
 
     /// divider
     dividerTheme: _divider.copyWith(color: AppColors.main),
@@ -87,24 +102,35 @@ class AppTheme {
 
     /// App Bar
     appBarTheme: _appBarTheme.copyWith(
+      backgroundColor: AppColors.mainDark,
       iconTheme: const IconThemeData(color: Colors.white),
     ),
 
     /// text theme
     textTheme: _baseTextTheme.copyWith(
       titleLarge:
-      _baseTextTheme.titleLarge?.copyWith(color: AppColors.txtPrimaryDark),
-      titleMedium:
-      _baseTextTheme.titleMedium?.copyWith(color: AppColors.txtCategoryDark),
+          _baseTextTheme.titleLarge?.copyWith(color: AppColors.txtPrimaryDark),
+      titleMedium: _baseTextTheme.titleMedium
+          ?.copyWith(color: AppColors.txtCategoryDark),
       titleSmall:
-      _baseTextTheme.titleSmall?.copyWith(color: AppColors.txtMainDark),
+          _baseTextTheme.titleSmall?.copyWith(color: AppColors.txtMainDark),
       bodyLarge:
-      _baseTextTheme.bodyLarge?.copyWith(color: AppColors.txtSecondaryDark),
-      bodyMedium:
-      _baseTextTheme.bodyMedium?.copyWith(color: AppColors.txtSecondaryDark),
+          _baseTextTheme.bodyLarge?.copyWith(color: AppColors.txtSecondaryDark),
+      bodyMedium: _baseTextTheme.bodyMedium
+          ?.copyWith(color: AppColors.txtSecondaryDark),
       bodySmall:
-      _baseTextTheme.bodySmall?.copyWith(color: AppColors.txtSecondaryDark),
+          _baseTextTheme.bodySmall?.copyWith(color: AppColors.txtSecondaryDark),
     ),
+    colorScheme: const ColorScheme(
+        primary: AppColors.primary,
+        onPrimary: AppColors.onPrimaryDark,
+        secondary: AppColors.secondary,
+        onSecondary: AppColors.onSecondary,
+        error: AppColors.error,
+        onError: AppColors.onError,
+        surface: AppColors.surface,
+        onSurface: AppColors.onSurface,
+        brightness: Brightness.dark),
 
     /// divider
     dividerTheme: _divider.copyWith(color: AppColors.mainDark),
