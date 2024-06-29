@@ -4,7 +4,7 @@ class AppString {
   /// paths
   static const String _imgBase = "assets/";
   static const String imgBackground = "${_imgBase}pattern.png";
-  static const String imgSports = "${_imgBase}sports.png";
+  static const String imgSports = "${_imgBase}ball.png";
   static const String imgPolitics = "${_imgBase}Politics.png";
   static const String imgHealth = "${_imgBase}health.png";
   static const String imgBusiness = "${_imgBase}business.png";

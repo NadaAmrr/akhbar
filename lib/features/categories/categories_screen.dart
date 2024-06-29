@@ -5,11 +5,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategoriesScreen extends StatelessWidget {
 
-  List<CategoryModel> categoriesList = CategoryModel.getCategories();
-   CategoriesScreen({super.key});
+   const CategoriesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    List<CategoryModel> categoriesList = CategoryModel.getCategories(context);
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
