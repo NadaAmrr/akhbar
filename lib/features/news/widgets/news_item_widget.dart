@@ -1,5 +1,5 @@
 import 'package:akhbar/models/ArticlesResponse.dart';
-import 'package:akhbar/models/source.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class ArticleItemWidget extends StatelessWidget {
@@ -18,19 +18,19 @@ class ArticleItemWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // CachedNetworkImage(
-          //   imageUrl: articles.urlToImage ?? "",
-          //   placeholder: (context, url) => CircularProgressIndicator(),
-          //   errorWidget: (context, url, error) => Icon(Icons.error),
-          // ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child:
-              Image.network(
-              news.urlToImage ?? "",
-              height: 250,
-              fit: BoxFit.fill,
-              ),),
+          CachedNetworkImage(
+            imageUrl: news.urlToImage ?? "",
+            placeholder: (context, url) => Center(child: CircularProgressIndicator(color: Theme.of(context).primaryColor,)),
+            errorWidget: (context, url, error) => Icon(Icons.error),
+          ),
+          //   ClipRRect(
+          //     borderRadius: BorderRadius.circular(12),
+          //     child:
+          //     Image.network(
+          //     news.urlToImage ?? "",
+          //     height: 250,
+          //     fit: BoxFit.fill,
+          //     ),),
           Text(news.author ?? "",
               style: Theme.of(context).textTheme.titleMedium),
           Text(news.title ?? "", style: Theme.of(context).textTheme.bodyLarge),
