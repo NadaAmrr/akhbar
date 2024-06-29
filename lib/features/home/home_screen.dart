@@ -22,11 +22,11 @@ class HomeScreen extends StatelessWidget {
           title: Text(AppLocalizations.of(context)!.appName),
         ),
         // drawer: DrawerWidget(onDrawerItemClicked: onDrawerClick),
-        body: bodyWidget,
+        // body: bodyWidget,
       ),
     );
   }
-  late Widget bodyWidget;
+  // late Widget bodyWidget;
 
   // onDrawerClick(DrawerMenuItem item) {
   //   switch (item) {
