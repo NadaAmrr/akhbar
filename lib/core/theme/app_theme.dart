@@ -128,7 +128,7 @@ class AppTheme {
     colorScheme: const ColorScheme(
         primary: AppColors.primary,
         onPrimary: AppColors.onPrimaryDark,
-        secondary: AppColors.secondary,
+        secondary: AppColors.black,
         onSecondary: AppColors.onSecondary,
         error: AppColors.error,
         onError: AppColors.onError,

@@ -1,8 +1,9 @@
+import 'package:akhbar/models/SourcesResponse.dart';
 import 'package:akhbar/models/source.dart';
 import 'package:flutter/material.dart';
 
 class SourceItem extends StatelessWidget {
-  Source source;
+  Sources source;
   bool isSelected;
   SourceItem({super.key, required this.source,required this.isSelected});
   @override
@@ -17,7 +18,7 @@ class SourceItem extends StatelessWidget {
         ),
         color: isSelected? Theme.of(context).primaryColor : Colors.transparent,
       ),
-      child: Text(source.name ?? "", style: isSelected? Theme.of(context).textTheme.titleMedium : Theme.of(context).textTheme.titleMedium ),
+      child: Text(source.name ?? "", style: isSelected? Theme.of(context).textTheme.titleMedium!.copyWith(color: Theme.of(context).colorScheme.secondary) : Theme.of(context).textTheme.titleMedium ),
     );
   }
 }
