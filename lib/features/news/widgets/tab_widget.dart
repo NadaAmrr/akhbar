@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class TabWidget extends StatelessWidget {
-  TabWidget({
+  const TabWidget({
     super.key,
     required this.sourcesList,
   });
