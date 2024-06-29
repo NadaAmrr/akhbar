@@ -15,9 +15,11 @@ class ArticlesWidget extends StatelessWidget {
         future: ApiManager.getArticles(source.id ?? ''),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
-              child: CircularProgressIndicator(
-                color: Theme.of(context).primaryColor,
+            return Expanded(
+              child: Center(
+                child: CircularProgressIndicator(
+                  color: Theme.of(context).primaryColor,
+                ),
               ),
             );
           } else if (snapshot.hasError) {

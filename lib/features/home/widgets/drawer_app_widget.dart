@@ -9,9 +9,9 @@ class DrawerWidget extends StatelessWidget {
   static const int category = 1;
   static const int settings = 2;
   static const int sources = 3;
-  OnDrawerItemClicked onDrawerItemClicked;
+  // OnDrawerItemClicked onDrawerItemClicked;
   DrawerWidget({
-    required this.onDrawerItemClicked,
+    // required this.onDrawerItemClicked,
     super.key,
   });
 
@@ -46,17 +46,17 @@ class DrawerWidget extends StatelessWidget {
       children: [
         InkWell(
             onTap: () {
-              onDrawerItemClicked(DrawerMenuItem.category);
+              // onDrawerItemClicked(DrawerMenuItem.category);
             },
             child: buildListTile(title: "Categories", icon: Icons.list)),
         InkWell(
             onTap: () {
-              onDrawerItemClicked(DrawerMenuItem.settings);
+              // onDrawerItemClicked(DrawerMenuItem.settings);
             },
             child: buildListTile(title: "Settings", icon: Icons.settings)),
         InkWell(
             onTap: () {
-              onDrawerItemClicked(DrawerMenuItem.sources);
+              // onDrawerItemClicked(DrawerMenuItem.sources);
             },
             child: buildListTile(title: "Sources", icon: Icons.newspaper)),
       ],

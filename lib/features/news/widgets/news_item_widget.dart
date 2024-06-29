@@ -23,15 +23,14 @@ class ArticleItemWidget extends StatelessWidget {
           //   placeholder: (context, url) => CircularProgressIndicator(),
           //   errorWidget: (context, url, error) => Icon(Icons.error),
           // ),
-          /**   ClipRRect(
+            ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child:
               Image.network(
-              articles.urlToImage ?? "",
+              news.urlToImage ?? "",
               height: 250,
               fit: BoxFit.fill,
               ),),
-           */
           Text(news.author ?? "",
               style: Theme.of(context).textTheme.titleMedium),
           Text(news.title ?? "", style: Theme.of(context).textTheme.bodyLarge),

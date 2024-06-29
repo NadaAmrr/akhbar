@@ -63,7 +63,7 @@ class AppTheme {
     /// App Bar
     appBarTheme: _appBarTheme.copyWith(
       backgroundColor: AppColors.main,
-      iconTheme: const IconThemeData(color: Colors.black),
+      iconTheme: const IconThemeData(color: Colors.white),
       titleTextStyle: _baseTextTheme.titleLarge?.copyWith(color: AppColors.txtMainLight),
     ),
 
@@ -119,7 +119,7 @@ class AppTheme {
     /// App Bar
     appBarTheme: _appBarTheme.copyWith(
       backgroundColor: AppColors.mainDark,
-      iconTheme: const IconThemeData(color: Colors.white),
+      iconTheme: const IconThemeData(color: Colors.black),
       titleTextStyle: _baseTextTheme.titleLarge?.copyWith(color: AppColors.txtMainDark),
 
     ),
