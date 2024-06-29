@@ -119,7 +119,7 @@ class AppTheme {
       titleSmall:
           _baseTextTheme.titleSmall?.copyWith(color: AppColors.txtMainDark),
       bodyLarge:
-          _baseTextTheme.bodyLarge?.copyWith(color: AppColors.txtSecondaryDark),
+          _baseTextTheme.bodyLarge?.copyWith(color: AppColors.txtPrimaryDark),
       bodyMedium: _baseTextTheme.bodyMedium
           ?.copyWith(color: AppColors.txtSecondaryDark),
       bodySmall:

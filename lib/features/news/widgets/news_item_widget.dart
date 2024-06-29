@@ -1,9 +1,10 @@
+import 'package:akhbar/models/ArticlesResponse.dart';
 import 'package:akhbar/models/source.dart';
 import 'package:flutter/material.dart';
 
-class ArticleItemWidth extends StatelessWidget {
-  Source news;
-  ArticleItemWidth({super.key, required this.news});
+class ArticleItemWidget extends StatelessWidget {
+  Articles news;
+  ArticleItemWidget({super.key, required this.news});
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +32,11 @@ class ArticleItemWidth extends StatelessWidget {
               fit: BoxFit.fill,
               ),),
            */
-          Text(news.country ?? "",
-              style: Theme.of(context).textTheme.bodyLarge),
-          Text(news.name ?? "", style: Theme.of(context).textTheme.bodyLarge),
+          Text(news.author ?? "",
+              style: Theme.of(context).textTheme.titleMedium),
+          Text(news.title ?? "", style: Theme.of(context).textTheme.bodyLarge),
           Text(news.description ?? "",
-              style: Theme.of(context).textTheme.bodyLarge),
-          // Text(articles.description ?? "", style: TextStyle(fontWeight: FontManager.light, color: ColorManager.txtTertiaryLight, fontSize: 10)),
+              style: Theme.of(context).textTheme.bodySmall),
         ],
       ),
     );
