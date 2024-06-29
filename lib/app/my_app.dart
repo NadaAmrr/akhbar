@@ -1,7 +1,7 @@
 
 import 'package:akhbar/core/enums/lang_enum.dart';
 import 'package:akhbar/core/theme/app_theme.dart';
-import 'package:akhbar/features/categories/categories_screen.dart';
+import 'package:akhbar/features/categories/categories_tab.dart';
 import 'package:akhbar/features/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       debugShowCheckedModeBanner: false,
-      locale: Locale(Languages.ar.toString()),
+      locale: Locale('en'),
       title: 'Akhbar',
       theme: AppTheme.lightTheme,
       home: HomeScreen(),

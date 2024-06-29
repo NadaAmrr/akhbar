@@ -1,7 +1,8 @@
 import 'package:akhbar/core/utils/app_assets.dart';
 import 'package:akhbar/core/utils/app_colors.dart';
-import 'package:akhbar/features/categories/categories_screen.dart';
+import 'package:akhbar/features/categories/categories_tab.dart';
 import 'package:akhbar/features/home/widgets/drawer_app_widget.dart';
+import 'package:akhbar/features/news/news_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -23,7 +24,7 @@ class HomeScreen extends StatelessWidget {
           title: Text(AppLocalizations.of(context)!.appName),
         ),
         // drawer: DrawerWidget(onDrawerItemClicked: onDrawerClick),
-        body: CategoriesScreen(),
+        body: NewsTab(),
       ),
     );
   }
