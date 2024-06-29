@@ -1,5 +1,6 @@
 import 'package:akhbar/core/utils/app_colors.dart';
 import 'package:akhbar/features/news/provider/tab_provider.dart';
+import 'package:akhbar/features/news/widgets/articles_widget.dart';
 import 'package:akhbar/features/news/widgets/source_widget.dart';
 import 'package:akhbar/models/source.dart';
 import 'package:flutter/material.dart';
@@ -24,22 +25,29 @@ class TabWidget extends StatelessWidget {
 
               return DefaultTabController(
                   length: sourcesList.length,
-                  child: TabBar(
-                    dividerColor: Colors.transparent,
-                    isScrollable: true,
-                    indicatorColor: AppColors.white.withOpacity(0),
-                    onTap: (index) {
-                      provider.changeIndex(index);
-                    },
-                    tabs: sourcesList
-                        .map((e) => Tab(
-                              child: SourceItem(
-                                source: e,
-                                isSelected: provider.selectedIndex ==
-                                    sourcesList.indexOf(e),
-                              ),
-                            ))
-                        .toList(),
+                  child: Column(
+                    children: [
+                      /// Tab bar (sources)
+                      TabBar(
+                        dividerColor: Colors.transparent,
+                        isScrollable: true,
+                        indicatorColor: AppColors.white.withOpacity(0),
+                        onTap: (index) {
+                          provider.changeIndex(index);
+                        },
+                        tabs: sourcesList
+                            .map((e) => Tab(
+                                  child: SourceItem(
+                                    source: e,
+                                    isSelected: provider.selectedIndex ==
+                                        sourcesList.indexOf(e),
+                                  ),
+                                ))
+                            .toList(),
+                      ),
+                      /// Articles
+                      ArticlesWidget(source: sourcesList[provider.selectedIndex])
+                    ],
                   ));
             }));
   }

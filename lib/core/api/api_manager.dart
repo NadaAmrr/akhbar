@@ -5,10 +5,9 @@ import 'package:akhbar/models/ArticlesResponse.dart';
 import 'package:akhbar/models/SourcesResponse.dart';
 import 'package:http/http.dart' as http;
 
-
 class ApiManager {
   /// Get Sources -> home screen
-  static Future<SourcesResponse?> getSources() async{
+  static Future<SourcesResponse?> getSources() async {
     Uri uri = Uri.https(ApiConstants.baseUrl, Endpoints.sources, {
       ApiConstants.keyCountry: 'us',
       ApiConstants.keyApiKey: ApiConstants.apiKey,
@@ -25,10 +24,11 @@ class ApiManager {
       throw e;
     }
   }
+
   /// Get Articles -> home screen
-  static Future<ArticlesResponse?> getArticles(String sourceId) async{
+  static Future<ArticlesResponse?> getArticles(String sourceId) async {
     Uri uri = Uri.https(ApiConstants.baseUrl, Endpoints.articles, {
-      ApiConstants.keySources: 'wired',
+      ApiConstants.keySources: sourceId,
       ApiConstants.keyApiKey: ApiConstants.apiKey,
     });
     print(uri);
@@ -44,7 +44,8 @@ class ApiManager {
       throw e;
     }
   }
+
   ///
 
- ///
+  ///
 }

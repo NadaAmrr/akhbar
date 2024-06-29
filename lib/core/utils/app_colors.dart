@@ -24,9 +24,11 @@ class AppColors {
   static const Color txtCategoryDark = Color(0xffa4b8d3);
   static const Color txtMainLight = white;
   static const Color txtMainDark= black;
+  // static const Color txtPrimaryLight = Color(0xff303030);
   static const Color txtPrimaryLight = Color(0xff303030);
   static const Color txtPrimaryDark = Color(0xFFE3E3E3);
-  static const Color txtSecondaryLight = Color(0xff42505C);
+  // static const Color txtSecondaryLight = Color(0xff42505C);
+  static const Color txtSecondaryLight = black;
   static const Color txtSecondaryDark= Color(0xff91afc9);
   static const Color txtTertiaryLight = Color(0xff79828B);
   static const Color txtTertiaryDark = Color(0xff848688);

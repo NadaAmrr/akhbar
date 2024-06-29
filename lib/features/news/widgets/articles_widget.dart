@@ -2,23 +2,22 @@ import 'package:akhbar/core/api/api_manager.dart';
 import 'package:akhbar/core/enums/status_enum.dart';
 import 'package:akhbar/features/news/widgets/news_item_widget.dart';
 import 'package:akhbar/models/ArticlesResponse.dart';
+import 'package:akhbar/models/source.dart';
 import 'package:flutter/material.dart';
 
 class ArticlesWidget extends StatelessWidget {
-  const ArticlesWidget({super.key});
+  Source source;
+  ArticlesWidget({super.key, required this.source});
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<ArticlesResponse?>(
-        future: ApiManager.getArticles(""),
+        future: ApiManager.getArticles(source.id ?? ''),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Expanded(
-              flex: 5,
-              child: Center(
-                child: CircularProgressIndicator(
-                  color: Theme.of(context).primaryColor,
-                ),
+            return Center(
+              child: CircularProgressIndicator(
+                color: Theme.of(context).primaryColor,
               ),
             );
           } else if (snapshot.hasError) {

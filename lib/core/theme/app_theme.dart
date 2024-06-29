@@ -23,23 +23,23 @@ class AppTheme {
 
     /// Title Medium
     titleMedium: TextStyle(
-        fontSize: 22, fontFamily: 'Inter', fontWeight: FontWeight.w700),
+        fontSize: 22,  fontWeight: FontWeight.w600),
 
     /// Title Small
     titleSmall: TextStyle(
-        fontSize: 20, fontFamily: 'Inter', fontWeight: FontWeight.w400),
+        fontSize: 20,  fontWeight: FontWeight.w400),
 
     /// Body Large
     bodyLarge: TextStyle(
-        fontSize: 20, fontFamily: 'Poppins', fontWeight: FontWeight.w400),
+        fontSize: 20,fontWeight: FontWeight.w400),
 
     /// Body Medium
     bodyMedium: TextStyle(
-        fontSize: 20, fontFamily: 'Poppins', fontWeight: FontWeight.w400),
+        fontSize: 20,  fontWeight: FontWeight.w400),
 
     /// Body small
     bodySmall: TextStyle(
-        fontSize: 20, fontFamily: 'Poppins', fontWeight: FontWeight.w400),
+        fontSize: 17, fontWeight: FontWeight.w400),
   );
 
   /// ==== Base theme
@@ -70,18 +70,32 @@ class AppTheme {
     /// text theme
     textTheme: _baseTextTheme.copyWith(
       titleLarge:
-          _baseTextTheme.titleLarge?.copyWith(color: AppColors.txtPrimaryLight),
-      titleMedium:
-          _baseTextTheme.titleMedium?.copyWith(color: AppColors.txtCategory),
+      _baseTextTheme.titleLarge?.copyWith(color: AppColors.txtPrimaryLight),
+      titleMedium: _baseTextTheme.titleMedium
+          ?.copyWith(color: AppColors.txtCategory),
       titleSmall:
-          _baseTextTheme.titleSmall?.copyWith(color: AppColors.txtMainLight),
-      bodyLarge: _baseTextTheme.bodyLarge
-          ?.copyWith(color: AppColors.txtSecondaryLight),
+      _baseTextTheme.titleSmall?.copyWith(color: AppColors.txtMainLight),
+      bodyLarge:
+      _baseTextTheme.bodyLarge?.copyWith(color: AppColors.txtPrimaryLight),
       bodyMedium: _baseTextTheme.bodyMedium
           ?.copyWith(color: AppColors.txtSecondaryLight),
-      bodySmall: _baseTextTheme.bodySmall
-          ?.copyWith(color: AppColors.txtSecondaryLight),
+      bodySmall:
+      _baseTextTheme.bodySmall?.copyWith(color: AppColors.txtSecondaryLight),
     ),
+    // textTheme: _baseTextTheme.copyWith(
+    //   titleLarge:
+    //       _baseTextTheme.titleLarge?.copyWith(color: AppColors.txtPrimaryLight),
+    //   titleMedium:
+    //       _baseTextTheme.titleMedium?.copyWith(color: AppColors.txtCategory),
+    //   titleSmall:
+    //       _baseTextTheme.titleSmall?.copyWith(color: AppColors.txtMainLight),
+    //   bodyLarge: _baseTextTheme.bodyLarge
+    //       ?.copyWith(color: AppColors.txtSecondaryLight),
+    //   bodyMedium: _baseTextTheme.bodyMedium
+    //       ?.copyWith(color: AppColors.txtSecondaryLight),
+    //   bodySmall: _baseTextTheme.bodySmall
+    //       ?.copyWith(color: AppColors.txtSecondaryLight),
+    // ),
 
     colorScheme: const ColorScheme(
         primary: AppColors.primary,
