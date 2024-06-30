@@ -12,6 +12,8 @@ Akbar is a Flutter-based news application that utilizes the NewsAPI to fetch and
 ## Video Demonstration
 - Watch the video below to see the Akbar app in action:
 
+https://github.com/NadaAmrr/akhbar/assets/115532651/0c04c9bb-c309-4250-9f5f-04943402f7ed
+
 https://github.com/NadaAmrr/akhbar/assets/115532651/0547850b-1025-4c19-9a4c-6dfc997f000d
 
 ## License
