@@ -1,4 +1,3 @@
-
 import 'package:akhbar/features/home/provider/lang_provider.dart';
 import 'package:akhbar/models/ArticlesResponse.dart';
 import 'package:flutter/material.dart';
@@ -65,11 +64,19 @@ class ArticleDetailsWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                TextButton(onPressed: () {}, child: Text(AppLocalizations.of(context)!.viewArticle, style: Theme.of(context).textTheme.titleLarge),),
-                providerLang.appLang == "en" ? const IconArticle(icon: Icons.double_arrow_sharp) : const IconArticle(icon: Icons.keyboard_double_arrow_left)
+                TextButton(
+                  onPressed: () {},
+                  child: Text(AppLocalizations.of(context)!.viewArticle,
+                      style: Theme.of(context).textTheme.titleLarge),
+                ),
+                providerLang.appLang == "en"
+                    ? const IconArticle(icon: Icons.double_arrow_sharp)
+                    : const IconArticle(icon: Icons.keyboard_double_arrow_left)
               ],
             ),
-            Text(article.author ?? "", style: Theme.of(context).textTheme.bodySmall, textAlign: TextAlign.end),
+            Text(article.author ?? "",
+                style: Theme.of(context).textTheme.bodySmall,
+                textAlign: TextAlign.end),
             Text(
               formatPublishedAt(article.publishedAt ?? ""),
               style: Theme.of(context).textTheme.bodyLarge,
@@ -87,9 +94,13 @@ class IconArticle extends StatelessWidget {
     required this.icon,
     super.key,
   });
-final IconData icon;
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
-    return Icon(icon, size: 40, color: Theme.of(context).primaryColor,);
+    return Icon(
+      icon,
+      size: 40,
+      color: Theme.of(context).primaryColor,
+    );
   }
 }
