@@ -1,16 +1,25 @@
-# akhbar
+# Akbar App
 
-A new Flutter project.
+Akbar is a Flutter-based news application that utilizes the NewsAPI to fetch and display the latest news articles. The app features localization, theming, and state management using the Provider package.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **NewsAPI Integration**: Fetches the latest news articles from NewsAPI.
+- **Localization**: Supports multiple languages for a better user experience.
+- **Theming**: Customizable themes, including light and dark modes.
+- **State Management**: State management using the Provider package.
 
-A few resources to get you started if this is your first Flutter project:
+## Video Demonstration
+- Watch the video below to see the Akbar app in action:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+https://github.com/NadaAmrr/akhbar/assets/115532651/0547850b-1025-4c19-9a4c-6dfc997f000d
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+
+
+
+
+
