@@ -2,6 +2,7 @@ import 'package:akhbar/models/category_model.dart';
 import 'package:flutter/material.dart';
 
 class HomeProvider extends ChangeNotifier {
+
   /// To store category
   CategoryModel? selectedCategory;
 

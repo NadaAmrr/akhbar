@@ -25,11 +25,11 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.appName),
+          title: Text(providerHome.selectedCategory == null ? AppLocalizations.of(context)!.appName : providerHome.selectedCategory!.title),
         ),
         drawer: DrawerWidget(
-        provider: provider,
-        onDrawerItemClicked: providerHome.onDrawerItemClick,
+          provider: provider,
+          onDrawerItemClicked: providerHome.onDrawerItemClick,
         ),
         body: providerHome.selectedCategory == null
             ? CategoriesTab(
