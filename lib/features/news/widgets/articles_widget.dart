@@ -7,13 +7,13 @@ import 'package:flutter/material.dart';
 
 class ArticlesWidget extends StatelessWidget {
   Source source;
-
-  ArticlesWidget({super.key, required this.source});
+  String query;
+  ArticlesWidget({super.key, required this.source, required this.query});
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<ArticlesResponse?>(
-        future: ApiManager.getArticles(source.id ?? ''),
+        future: ApiManager.getArticles(source.id ?? '', query),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Expanded(
@@ -26,7 +26,7 @@ class ArticlesWidget extends StatelessWidget {
           } else if (snapshot.hasError) {
             return ElevatedButton(
                 onPressed: () {
-                  ApiManager.getArticles(source.id ?? '');
+                  ApiManager.getArticles(source.id ?? '', query);
                 },
                 child: Text(
                   "Try Again",
@@ -41,7 +41,7 @@ class ArticlesWidget extends StatelessWidget {
                 Text(snapshot.data?.message ?? ""),
                 ElevatedButton(
                     onPressed: () {
-                      ApiManager.getArticles(source.id ?? '');
+                      ApiManager.getArticles(source.id ?? '',query);
                     },
                     child: Text(
                       "Try Again",

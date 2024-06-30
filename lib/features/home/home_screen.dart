@@ -4,6 +4,7 @@ import 'package:akhbar/features/categories/categories_tab.dart';
 import 'package:akhbar/features/home/provider/home_provider.dart';
 import 'package:akhbar/features/home/widgets/drawer_widget.dart';
 import 'package:akhbar/features/news/news_tab.dart';
+import 'package:akhbar/features/search/search_delegate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -26,6 +27,11 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           title: Text(providerHome.selectedCategory == null ? AppLocalizations.of(context)!.appName : providerHome.selectedCategory!.title),
+          actions: [
+            providerHome.selectedCategory == null ? const SizedBox() : IconButton(onPressed: () {
+              showSearch(context: context, delegate: SearchTab(provider, providerHome));
+            }, icon: const Icon(Icons.search))
+          ],
         ),
         drawer: DrawerWidget(
           provider: provider,
@@ -35,7 +41,7 @@ class HomeScreen extends StatelessWidget {
             ? CategoriesTab(
                 onCategoryItemClicked: providerHome.onCategoryItemClicked,
               )
-            : NewsTab(categoryModel: providerHome.selectedCategory!),
+            : NewsTab(categoryModel: providerHome.selectedCategory!, query: '',),
       ),
     );
   }
