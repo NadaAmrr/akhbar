@@ -11,6 +11,7 @@ class ArticleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Articles article = ModalRoute.of(context)!.settings.arguments as Articles;
     return Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.onPrimary,
       appBar: AppBar(
         title: Text( AppLocalizations.of(context)!.appName ),
       ),
