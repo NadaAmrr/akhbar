@@ -1,5 +1,4 @@
 
-import 'package:akhbar/core/theme/app_theme.dart';
 import 'package:akhbar/core/theme/theme_provider.dart';
 import 'package:akhbar/features/home/home_screen.dart';
 import 'package:akhbar/features/home/widgets/lang_provider.dart';
