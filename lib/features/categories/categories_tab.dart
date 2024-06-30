@@ -32,8 +32,6 @@ class CategoriesTab extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                     return InkWell(
                       onTap: () {
-                        print(categoriesList[index]);
-                        print(categoriesList[index].id);
                         onCategoryItemClicked(categoriesList[index]);
                       },
                       child: CategoryItem(
