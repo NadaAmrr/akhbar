@@ -1,4 +1,3 @@
-import 'package:akhbar/core/theme/app_theme.dart';
 import 'package:akhbar/core/theme/theme_provider.dart';
 import 'package:akhbar/features/home/provider/home_provider.dart';
 import 'package:akhbar/features/news/news_tab.dart';
@@ -36,24 +35,31 @@ class SearchTab extends SearchDelegate {
         ? Center(
             child: Text(AppLocalizations.of(context)!.searching,
                 style: Theme.of(context).textTheme.titleLarge))
-        : NewsTab(
-            categoryModel: providerHome.selectedCategory!,
-            query: query,
-          );
+        : Container(
+      color: Theme.of(context).colorScheme.onPrimary,
+          child: NewsTab(
+              categoryModel: providerHome.selectedCategory!,
+              query: query,
+            ),
+        );
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
     /// before search and after search
-    return Center(
-        child: Text(AppLocalizations.of(context)!.searching,
-            style: Theme.of(context).textTheme.titleLarge));
+    return Container(
+      color: Theme.of(context).colorScheme.onPrimary,
+      child: Center(
+          child: Text(AppLocalizations.of(context)!.searching,
+              style: Theme.of(context).textTheme.titleLarge)),
+    );
     // return SuggestionsWidget(query: query);
   }
 
   @override
   ThemeData appBarTheme(BuildContext context) {
     return provider.themeData!.copyWith(
+      scaffoldBackgroundColor: Theme.of(context).colorScheme.onPrimary,
         inputDecorationTheme: InputDecorationTheme(
             labelStyle: Theme.of(context).textTheme.bodySmall,
             fillColor: Theme.of(context).colorScheme.secondary,

@@ -49,7 +49,7 @@ class DrawerWidget extends StatelessWidget {
                           icon: Icons.category,
                           context: context)),
                   ListTile(
-                    title: Text(AppLocalizations.of(context)!.lang,style: Theme.of(context).textTheme.titleLarge),
+                    title: Text(AppLocalizations.of(context)!.lang,style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Theme.of(context).textTheme.titleLarge!.color, fontWeight: FontWeight.w700)),
                     trailing: DropdownButton<Locale>(
                       iconSize: 40,
                       dropdownColor: Theme.of(context).colorScheme.secondary,
