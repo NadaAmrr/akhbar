@@ -1,0 +1,17 @@
+{
+  "appName": "الأخبار",
+  "category": "الفئات",
+  "settings": "الإعدادات",
+  "categoryTitle": "اختر فئة اهتمامك",
+  "sports": "الرياضة",
+  "general": "السياسة",
+  "health": "الصحة",
+  "business": "الأعمال",
+  "entertainment": "البيئة",
+  "science": "العلوم",
+  "technology": "التكنولوجيا",
+  "darkMode": "الوضع الداكن",
+  "lang": "اللغة",
+  "en": "الأنجليزية",
+  "ar": "العربية"
+}

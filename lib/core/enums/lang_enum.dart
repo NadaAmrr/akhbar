@@ -1,0 +1,5 @@
+
+enum Languages {
+  ar,
+  en
+}
