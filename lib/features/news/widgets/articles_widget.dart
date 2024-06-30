@@ -1,5 +1,6 @@
 import 'package:akhbar/core/api/api_manager.dart';
 import 'package:akhbar/core/enums/status_enum.dart';
+import 'package:akhbar/features/article/article_screen.dart';
 import 'package:akhbar/features/news/widgets/news_item_widget.dart';
 import 'package:akhbar/models/ArticlesResponse.dart';
 import 'package:akhbar/models/source.dart';
@@ -57,7 +58,9 @@ class ArticlesWidget extends StatelessWidget {
                 return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, ArticleScreen.routeName, arguments: articleList[index]);
+                        },
                         child: ArticleItemWidget(news: articleList[index])));
               },
               itemCount: articleList.length,
