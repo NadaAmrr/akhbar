@@ -6,14 +6,15 @@ import 'package:akhbar/models/category_model.dart';
 import 'package:flutter/material.dart';
 
 class NewsTab extends StatelessWidget {
+  final String query;
   CategoryModel categoryModel;
-  NewsTab({super.key, required this.categoryModel});
+  NewsTab({super.key, required this.categoryModel, required this.query, });
 
   @override
   Widget build(BuildContext context) {
     return
       FutureBuilder<SourcesResponse?>(
-        future: ApiManager.getSources(categoryModel.id),
+        future: ApiManager.getSources(categoryId: categoryModel.id, ),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
@@ -24,7 +25,7 @@ class NewsTab extends StatelessWidget {
           } else if (snapshot.hasError) {
             return ElevatedButton(
                 onPressed: () {
-                  ApiManager.getSources(categoryModel.id);
+                  ApiManager.getSources(categoryId: categoryModel.id);
                 },
                 child: Text(
                   "Try Again",
@@ -39,7 +40,7 @@ class NewsTab extends StatelessWidget {
                 Text(snapshot.data?.message ?? ""),
                 ElevatedButton(
                     onPressed: () {
-                      ApiManager.getSources(categoryModel.id);
+                      ApiManager.getSources(categoryId: categoryModel.id);
                     },
                     child: Text(
                       "Try Again",
@@ -49,7 +50,7 @@ class NewsTab extends StatelessWidget {
             );
           }
           var sourcesList = snapshot.data!.sources ?? [];
-          return TabWidget(sourcesList: sourcesList);
+          return TabWidget(sourcesList: sourcesList, query: query,);
         },
       );
 

@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class ApiManager {
   /// Get Sources -> home screen
-  static Future<SourcesResponse?> getSources(categoryId) async {
+  static Future<SourcesResponse?> getSources({categoryId}) async {
     Uri uri = Uri.https(ApiConstants.baseUrl, Endpoints.sources, {
       ApiConstants.keyCountry: 'us',
       ApiConstants.keyCategory: categoryId,
@@ -21,19 +21,17 @@ class ApiManager {
       var obj = SourcesResponse.fromJson(json);
       return obj;
     } catch (e) {
-      print("====get sources");
       throw e;
     }
   }
 
   /// Get Articles -> home screen
-  static Future<ArticlesResponse?> getArticles(String sourceId) async {
+  static Future<ArticlesResponse?> getArticles(String sourceId, query) async {
     Uri uri = Uri.https(ApiConstants.baseUrl, Endpoints.articles, {
       ApiConstants.keySources: sourceId,
+      ApiConstants.keyQuery: query,
       ApiConstants.keyApiKey: ApiConstants.apiKey,
     });
-    print(uri);
-    print("=============");
     try {
       var res = await http.get(uri);
       var bodyString = res.body;
@@ -41,12 +39,7 @@ class ApiManager {
       var obj = ArticlesResponse.fromJson(json);
       return obj;
     } catch (e) {
-      print("====get articles");
       throw e;
     }
   }
-
-  ///
-
-  ///
 }

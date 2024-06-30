@@ -7,9 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class TabWidget extends StatelessWidget {
+  final String query;
   const TabWidget({
     super.key,
-    required this.sourcesList,
+    required this.sourcesList, required this.query,
   });
 
   final List<Source> sourcesList;
@@ -46,7 +47,7 @@ class TabWidget extends StatelessWidget {
                             .toList(),
                       ),
                       /// Articles
-                      ArticlesWidget(source: sourcesList[provider.selectedIndex])
+                      ArticlesWidget(source: sourcesList[provider.selectedIndex], query: query,)
                     ],
                   ));
             }));

@@ -13,5 +13,7 @@
   "darkMode": "Dark Mode",
   "lang": "Language",
   "en": "English",
-  "ar": "Arabic"
+  "ar": "Arabic",
+  "suggestions": "Suggestions",
+  "searching": "Start searching"
 }
