@@ -65,7 +65,9 @@ class ArticleDetailsWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   child: Text(AppLocalizations.of(context)!.viewArticle,
                       style: Theme.of(context).textTheme.titleLarge),
                 ),
