@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ArticleDetailsWidget extends StatelessWidget {
   Articles article;
@@ -16,7 +17,13 @@ class ArticleDetailsWidget extends StatelessWidget {
       DateTime dateTime = DateTime.parse(dateStr);
       return DateFormat('MMMM dd, yyyy h:mm a').format(dateTime);
     }
-
+    // Future<void> launchUrl(String url) async {
+    //   if (await canLaunch(url)) {
+    //     await launch(url);
+    //   } else {
+    //     throw 'Could not launch $url';
+    //   }
+    // }
     return Container(
       padding: const EdgeInsets.all(12),
       margin: const EdgeInsets.all(12),
@@ -65,7 +72,9 @@ class ArticleDetailsWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    lunchMyUrl(article.url ?? "");
+                  },
                   child: Text(AppLocalizations.of(context)!.viewArticle,
                       style: Theme.of(context).textTheme.titleLarge),
                 ),
@@ -86,6 +95,17 @@ class ArticleDetailsWidget extends StatelessWidget {
         ),
       ),
     );
+  }
+  void lunchMyUrl(String url) async{
+    final Uri _url = Uri.parse(url);
+    bool canLaunch = await canLaunchUrl(_url);
+    if (canLaunch) {
+      print("can launch");
+      launchUrl(_url);
+    } else {
+      print("cannot launch");
+      throw 'Could not launch $url';
+    }
   }
 }
 
