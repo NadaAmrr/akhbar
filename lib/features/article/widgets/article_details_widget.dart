@@ -1,7 +1,10 @@
 
+import 'package:akhbar/features/home/provider/lang_provider.dart';
 import 'package:akhbar/models/ArticlesResponse.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class ArticleDetailsWidget extends StatelessWidget {
   Articles article;
@@ -9,6 +12,7 @@ class ArticleDetailsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var providerLang = Provider.of<LangProvider>(context);
     String formatPublishedAt(String dateStr) {
       DateTime dateTime = DateTime.parse(dateStr);
       return DateFormat('MMMM dd, yyyy h:mm a').format(dateTime);
@@ -52,10 +56,18 @@ class ArticleDetailsWidget extends StatelessWidget {
             const SizedBox(
               height: 5,
             ),
-            Text(article.content ?? "",
-                style: Theme.of(context).textTheme.titleMedium),
-            const SizedBox(
-              height: 5,
+            // Text(article.content ?? "",
+            //     style: Theme.of(context).textTheme.titleMedium),
+            // const SizedBox(
+            //   height: 5,
+            // ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                TextButton(onPressed: () {}, child: Text(AppLocalizations.of(context)!.viewArticle, style: Theme.of(context).textTheme.titleLarge),),
+                providerLang.appLang == "en" ? const IconArticle(icon: Icons.double_arrow_sharp) : const IconArticle(icon: Icons.keyboard_double_arrow_left)
+              ],
             ),
             Text(article.author ?? "", style: Theme.of(context).textTheme.bodySmall, textAlign: TextAlign.end),
             Text(
@@ -67,5 +79,17 @@ class ArticleDetailsWidget extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class IconArticle extends StatelessWidget {
+  const IconArticle({
+    required this.icon,
+    super.key,
+  });
+final IconData icon;
+  @override
+  Widget build(BuildContext context) {
+    return Icon(icon, size: 40, color: Theme.of(context).primaryColor,);
   }
 }
