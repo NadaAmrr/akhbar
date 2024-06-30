@@ -13,7 +13,6 @@ class ApiManager {
       ApiConstants.keyCategory: categoryId,
       ApiConstants.keyApiKey: ApiConstants.apiKey,
     });
-    print(uri);
     try {
       var res = await http.get(uri);
       var bodyString = res.body;
