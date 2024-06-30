@@ -7,9 +7,10 @@ import 'package:http/http.dart' as http;
 
 class ApiManager {
   /// Get Sources -> home screen
-  static Future<SourcesResponse?> getSources() async {
+  static Future<SourcesResponse?> getSources(categoryId) async {
     Uri uri = Uri.https(ApiConstants.baseUrl, Endpoints.sources, {
       ApiConstants.keyCountry: 'us',
+      ApiConstants.keyCategory: categoryId,
       ApiConstants.keyApiKey: ApiConstants.apiKey,
     });
     print(uri);

@@ -23,7 +23,7 @@ class CategoryItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset(category.imagePath, height: MediaQuery.of(context).size.height * 0.08,),
-          Text(category.title, style: Theme.of(context).textTheme.titleSmall,),
+          Text(category.title, style: Theme.of(context).textTheme.titleLarge,),
         ],
       ),
     );

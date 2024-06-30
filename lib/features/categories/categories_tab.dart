@@ -5,7 +5,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategoriesTab extends StatelessWidget {
 
-   const CategoriesTab({super.key});
+    CategoriesTab({super.key, required this.onCategoryItemClicked});
+   Function onCategoryItemClicked;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,9 @@ class CategoriesTab extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                     return InkWell(
                       onTap: () {
-                        // onCategoryItemClicked(categoriesList[index]);
+                        print(categoriesList[index]);
+                        print(categoriesList[index].id);
+                        onCategoryItemClicked(categoriesList[index]);
                       },
                       child: CategoryItem(
                           category: categoriesList[index], index: index),

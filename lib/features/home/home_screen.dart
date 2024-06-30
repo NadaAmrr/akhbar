@@ -1,7 +1,11 @@
+import 'package:akhbar/core/enums/drawer_enum.dart';
 import 'package:akhbar/core/theme/theme_provider.dart';
 import 'package:akhbar/core/utils/app_assets.dart';
+import 'package:akhbar/features/categories/categories_tab.dart';
+import 'package:akhbar/features/home/provider/home_provider.dart';
+import 'package:akhbar/features/home/widgets/drawer_widget.dart';
+import 'package:akhbar/features/home/widgets/lang_provider.dart';
 import 'package:akhbar/features/news/news_tab.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -12,6 +16,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<ThemeProvider>(context);
+    var providerHome = Provider.of<HomeProvider>(context);
     return Container(
       decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.onPrimary,
@@ -24,72 +29,16 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(AppLocalizations.of(context)!.appName),
         ),
-        // drawer: DrawerWidget(),
-        drawer: Drawer(
-          backgroundColor: Theme.of(context).primaryColor,
-          child: Container(
-            decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor, borderRadius: BorderRadius.circular(12)),
-            margin: EdgeInsets.all(16),
-            padding: EdgeInsets.all(10),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Dark Mode",
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                CupertinoSwitch(
-                    value: provider.isDarkMode,
-                    onChanged: (value) {
-                      provider.toggleTheme();
-                    }),
-              ],
-            ),
-          ),
+        drawer: DrawerWidget(
+        provider: provider,
+        onDrawerItemClicked: providerHome.onDrawerItemClick,
         ),
-        body: NewsTab(),
+        body: providerHome.selectedCategory == null
+            ? CategoriesTab(
+                onCategoryItemClicked: providerHome.onCategoryItemClicked,
+              )
+            : NewsTab(categoryModel: providerHome.selectedCategory!),
       ),
     );
   }
-  // late Widget bodyWidget;
-
-  // onDrawerClick(DrawerMenuItem item) {
-  //   switch (item) {
-  //     case DrawerMenuItem.category:
-  //       setState(() {
-  //         bodyWidget =  CategoryTab(onCategoryItemClicked: onCategoryItemClicked);
-  //         titleGlobal = "News";
-  //       });
-  //     case DrawerMenuItem.settings:
-  //       setState(() {
-  //         bodyWidget = const SettingsTab();
-  //         titleGlobal = "News";
-  //       });
-  //     case DrawerMenuItem.sources:
-  //       setState(() {
-  //         bodyWidget = SourcesTab();
-  //         titleGlobal = "News";
-  //       });
-  //   }
-  // }
-  // void onCategoryItemClicked (Category category) {
-  //   bodyWidget = CategoryDetails(category: category, onArticleItemClicked: onArticleItemClicked,);
-  //   setState(() {
-  //     titleGlobal = "News";
-  //   });
-  // }
-  //
-  // void onArticleItemClicked (Articles article) {
-  //   bodyWidget = ArticleDetails(article: article);
-  //   setState(() {
-  //     titleGlobal = article.title ?? "";
-  //   });
-  // }
-  //
-  // void onSourceItemClicked () {
-  //   bodyWidget = SourcesTab();
-  //   setState(() {});
-  // }
 }

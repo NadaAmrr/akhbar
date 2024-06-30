@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 class ArticlesWidget extends StatelessWidget {
   Source source;
+
   ArticlesWidget({super.key, required this.source});
 
   @override
@@ -25,7 +26,7 @@ class ArticlesWidget extends StatelessWidget {
           } else if (snapshot.hasError) {
             return ElevatedButton(
                 onPressed: () {
-                  ApiManager.getSources();
+                  ApiManager.getArticles(source.id ?? '');
                 },
                 child: Text(
                   "Try Again",
@@ -40,7 +41,7 @@ class ArticlesWidget extends StatelessWidget {
                 Text(snapshot.data?.message ?? ""),
                 ElevatedButton(
                     onPressed: () {
-                      ApiManager.getSources();
+                      ApiManager.getArticles(source.id ?? '');
                     },
                     child: Text(
                       "Try Again",

@@ -10,7 +10,7 @@ class AppTheme {
           borderRadius: BorderRadius.only(
         bottomLeft: Radius.circular(30),
         bottomRight: Radius.circular(30),
-      ))
+      )),
   );
 
   /// ==== Base text theme
@@ -63,7 +63,7 @@ class AppTheme {
     /// App Bar
     appBarTheme: _appBarTheme.copyWith(
       backgroundColor: AppColors.main,
-      iconTheme: const IconThemeData(color: Colors.white),
+      iconTheme: const IconThemeData(color: Colors.white, size: 30),
       titleTextStyle: _baseTextTheme.titleLarge?.copyWith(color: AppColors.txtMainLight),
     ),
 
@@ -119,7 +119,7 @@ class AppTheme {
     /// App Bar
     appBarTheme: _appBarTheme.copyWith(
       backgroundColor: AppColors.mainDark,
-      iconTheme: const IconThemeData(color: Colors.black),
+      iconTheme: const IconThemeData(color: Colors.black, size: 30),
       titleTextStyle: _baseTextTheme.titleLarge?.copyWith(color: AppColors.txtMainDark),
 
     ),

@@ -1,5 +1,7 @@
 {
   "appName": "AKBAR",
+  "category": "Categories",
+  "settings": "Settings",
   "categoryTitle": "Pick your category\nof interest",
   "sports": "Sports",
   "general": "Politics",
@@ -7,5 +9,9 @@
   "business": "Business",
   "entertainment": "Environment",
   "science": "Science",
-  "technology": "Technology"
+  "technology": "Technology",
+  "darkMode": "Dark Mode",
+  "lang": "Language",
+  "en": "English",
+  "ar": "Arabic"
 }
