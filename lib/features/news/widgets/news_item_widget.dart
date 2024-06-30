@@ -36,14 +36,11 @@ class ArticleItemWidget extends StatelessWidget {
               fit: BoxFit.fill,
             ),
           ),
-
+          const SizedBox(
+            height: 10,
+          ),
           Text(news.title ?? "",
               style: Theme.of(context).textTheme.titleMedium),
-          const SizedBox(
-            height: 5,
-          ),
-          Text(news.description ?? "",
-              style: Theme.of(context).textTheme.bodyLarge),
           const SizedBox(
             height: 5,
           ),

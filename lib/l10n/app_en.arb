@@ -15,5 +15,7 @@
   "en": "English",
   "ar": "Arabic",
   "suggestions": "Suggestions",
-  "searching": "Start searching"
+  "searching": "Start searching",
+  "viewArticle": "View article",
+  "tryAgain": "Try again"
 }
