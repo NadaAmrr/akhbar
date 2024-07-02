@@ -20,7 +20,9 @@ https://github.com/NadaAmrr/akhbar/assets/115532651/0547850b-1025-4c19-9a4c-6dfc
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
+## Visitors Count
 
+<img align="left" style="background: blue;" src="https://profile-counter.glitch.me/akhbar/count.svg" alt="Loading">
 
 
 
